@@ -4,6 +4,7 @@ first React project
 This web app loads a list of books, and clicking a book leads to a modal showing details of the book. You have two options (buttons) either go back to the list or buy the book. Clicking BUY button will add the book to shopping cart and bring to cart page. The cart page shows all books you want to buy with title and quantity. Clicking Checkout button will bring you to a summary.
 
 Building tool: webpack
+
 Running command: npm start
 
 [Version 1]
