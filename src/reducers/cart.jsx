@@ -5,19 +5,22 @@ import {
 } from '../actions/types.jsx';
 
 function addToCart(cartItems, id){
-    if(cartItems[id]) cartItems[id]++;
-    else cartItems[id] = 1;
-    return cartItems;
+    const newCartItems = JSON.parse(JSON.stringify(cartItems));//clone not mutate state
+    if(newCartItems[id]) newCartItems[id]++;
+    else newCartItems[id] = 1;
+    return newCartItems;
 }
 
 function removeFromCart(cartItems, id){
-    delete cartItems[id];//won't throw exception if id not a property
-    return cartItems;
+    const newCartItems = JSON.parse(JSON.stringify(cartItems));
+    delete newCartItems[id];//won't throw exception if id not a property
+    return newCartItems;
 }
 
 function modifyCart(cartItems, id, value){
-    cartItems[id] = value;
-    return cartItems;
+    const newCartItems = JSON.parse(JSON.stringify(cartItems));
+    newCartItems[id] = value;
+    return newCartItems;
 }
 
 const reducer = (state = {}, action) => { //the sate = cartItems
